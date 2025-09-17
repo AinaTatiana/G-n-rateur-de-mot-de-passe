@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Mot de Passe</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="bs/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Générateur de Mot de Passe</h1>
+        <div class="mb-3">
+            <label for="passwordLength" class="form-label">Longueur du mot de passe : <span id="lengthValue">12</span></label>
+            <input type="range" class="form-range slider" id="passwordLength" min="6" max="30" value="12">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="includeUppercase" checked>
+            <label class="form-check-label" for="includeUppercase">Inclure des majuscules (A-Z)</label>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="includeLowercase" checked>
+            <label class="form-check-label" for="includeLowercase">Inclure des minuscules (a-z)</label>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="includeNumbers" checked>
+            <label class="form-check-label" for="includeNumbers">Inclure des chiffres (0-9)</label>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="includeSymbols" checked>
+            <label class="form-check-label" for="includeSymbols">Inclure des symboles (!@#$%)</label>
+        </div>
+        <button class="btn btn-primary w-100 mb-3" onclick="generatePassword()">Générer le mot de passe</button>
+        <div id="passwordOutput" class="mb-3">Votre mot de passe apparaîtra ici</div>
+        <button class="btn copy-btn w-100" onclick="copyPassword()">Copier le mot de passe</button>
+    </div>
+
+    <footer>
+        <script src="script.js"></script>
+    <script src="bs/js/bootstrap.bundle.min.js"></script>
+    </footer>
+    
+</body>
+</html>
